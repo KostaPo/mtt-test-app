@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  database:
+    image: postgres:14.5
+    environment:
+      POSTGRES_USER: "usr"
+      POSTGRES_PASSWORD: "pwd"
+      POSTGRES_DB: "db"
+    container_name: db
+    ports:
+      - "5432:5432/tcp"
+    restart: unless-stopped
+
+  application:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://database:5432/db"
+    container_name: app
+    ports:
+      - "8080:8080/tcp"
+    restart: unless-stopped
+    depends_on:
+      - database
