@@ -2,5 +2,6 @@
 /.mvn/
 /target/
 HELP.md
+logs.log
 mvnw
 mvnw.cmd

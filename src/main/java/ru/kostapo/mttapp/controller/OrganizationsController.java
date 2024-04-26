@@ -23,6 +23,7 @@ public class OrganizationsController {
 
     @RequestMapping(value = "/organizations", method = RequestMethod.GET)
     public ResponseEntity<?> getAll(@RequestParam(required = false) String key) {
+        log.info("get all");
         Optional<List<Organization>> organizations = (key != null)
                 ? organizationService.getAllByKey(key)
                 : organizationService.getAll();
@@ -36,6 +37,7 @@ public class OrganizationsController {
 
     @RequestMapping(value = "/organizations/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getDataById(@PathVariable Long id) {
+        log.info("get Data By Id: " + id);
         Optional<Organization> organization = organizationService.getById(id);
         if (organization.isPresent()) {
             return ResponseEntity
