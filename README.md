@@ -26,8 +26,9 @@
 
 
 GET http://localhost:8080/app/organizations
-`json
-[
+
+
+```[
     {
         "fullName": "ТСЖ Кононов",
         "director": {
@@ -74,11 +75,12 @@ GET http://localhost:8080/app/organizations
             }
         ]
     } ...
-]'
+]
+```
  
 GET http://localhost:8080/app/organizations/5
 
-`json
+```
 {
     "fullName": "ИП Эдуард",
     "director": {
@@ -93,11 +95,12 @@ GET http://localhost:8080/app/organizations/5
         "address": "Россия, Кемерово, Садовая пл., 951"
     },
     "branches": []
-}'
+}
+```
  
 GET http://localhost:8080/app/organizations?key=Торг
 
-`json
+```
 [
     {
         "fullName": "ООО КрасноярскТоргСнабПром",
@@ -129,7 +132,8 @@ GET http://localhost:8080/app/organizations?key=Торг
         },
         "branches": []
     },...
-]'
+]
+```
 
 <h1>Запуск приложения:</h1>
 <ul>
