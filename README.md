@@ -1,4 +1,4 @@
-Задание: 
+<h1>Задание:</h1>
 1. Создать новый пустой Spring (5) Java-проект Web-приложения с поддержкой Maven, Java 17.  
  Проект должен поддерживать подключение к PostgreSQL (12 и выше) и механизм миграций на базе Liquibase.  
  Необходимые настройки проекта (в том числе и параметры подключения к БД) должны храниться в профиле. 
@@ -26,7 +26,7 @@
 
 
 GET http://localhost:8080/app/organizations
-
+`json
 [
     {
         "fullName": "ТСЖ Кононов",
@@ -74,10 +74,11 @@ GET http://localhost:8080/app/organizations
             }
         ]
     } ...
-]
+]'
  
 GET http://localhost:8080/app/organizations/5
 
+`json
 {
     "fullName": "ИП Эдуард",
     "director": {
@@ -92,10 +93,11 @@ GET http://localhost:8080/app/organizations/5
         "address": "Россия, Кемерово, Садовая пл., 951"
     },
     "branches": []
-}
+}'
  
 GET http://localhost:8080/app/organizations?key=Торг
 
+`json
 [
     {
         "fullName": "ООО КрасноярскТоргСнабПром",
@@ -127,7 +129,7 @@ GET http://localhost:8080/app/organizations?key=Торг
         },
         "branches": []
     },...
-]
+]'
 
 <h1>Запуск приложения:</h1>
 <ul>
