@@ -10,7 +10,6 @@ import java.util.List;
 
 @Setter
 @Getter
-
 @Entity
 @Table(name = "organizations", indexes = {
         @Index(name = "inn_index", columnList = "inn", unique = true),

@@ -8,8 +8,10 @@ import ru.kostapo.mttapp.entity.Organization;
 
 import java.util.List;
 
-@Mapper(uses = {AddressMapper.class, DirectorMapper.class}) public interface OrganizationMapper { OrganizationMapper INSTANCE = Mappers.getMapper(OrganizationMapper.class);
+@Mapper(uses = {AddressMapper.class, DirectorMapper.class})
+public interface OrganizationMapper {
 
+    OrganizationMapper INSTANCE = Mappers.getMapper(OrganizationMapper.class);
 
     @Mapping(source = "post", target = "postAddress")
     @Mapping(source = "fact", target = "factAddress")

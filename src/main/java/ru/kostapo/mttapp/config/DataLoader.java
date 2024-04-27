@@ -1,6 +1,7 @@
 package ru.kostapo.mttapp.config;
 
 import com.github.javafaker.Faker;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -17,20 +18,15 @@ import java.util.List;
 import java.util.Random;
 
 @Component
+@RequiredArgsConstructor
 public class DataLoader implements ApplicationRunner {
 
-    private final OrganizationService organizationService;
     private final Faker faker;
-    private final Random random;
-
-    public DataLoader(OrganizationService organizationService, Faker faker) {
-        this.organizationService = organizationService;
-        this.faker = faker;
-        this.random = new Random();
-    }
+    private final OrganizationService organizationService;
 
     @Override
     public void run(ApplicationArguments args) {
+        Random random = new Random(System.currentTimeMillis());
         List<Organization> organizationList = new LinkedList<>();
         for (int i = 0; i < 50; i++) {
             Organization organization = generateOrganization();
@@ -46,7 +42,6 @@ public class DataLoader implements ApplicationRunner {
         }
         organizationService.saveAll(organizationList);
     }
-
 
     private Organization generateOrganization() {
         Director director = new Director();

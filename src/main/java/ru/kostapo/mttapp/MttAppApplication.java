@@ -9,5 +9,4 @@ public class MttAppApplication {
     public static void main(String[] args) {
         SpringApplication.run(MttAppApplication.class, args);
     }
-
 }

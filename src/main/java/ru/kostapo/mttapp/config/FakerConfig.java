@@ -8,10 +8,8 @@ import java.util.Locale;
 
 @Configuration
 public class FakerConfig {
-
     @Bean
     public Faker faker() {
         return new Faker(new Locale("ru"));
     }
-
 }

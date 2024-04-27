@@ -6,5 +6,6 @@ import ru.kostapo.mttapp.entity.Organization;
 import java.util.List;
 
 public interface OrganizationRepository extends JpaRepository<Organization, Long> {
+
     List<Organization> findByFullNameContaining(String key);
 }

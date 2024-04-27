@@ -9,6 +9,7 @@ import ru.kostapo.mttapp.entity.Address;
 
 @Mapper
 public interface AddressMapper {
+
     @Mapping(target = "address", source = "address")
     AddressResponseDTO addressToAddressResponseDTO(Address address);
 
